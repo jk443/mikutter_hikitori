@@ -17,6 +17,7 @@ Plugin.create(:mikutter_hikitori) do
     msg = msg + "主を失ったパソコンの光だけが，"
     msg = msg + "動かなくなった" + "@"+to_name
     msg = msg + "を優しく照らし続けていた．"
+    msg = msg + '　' * (rand(140-msg.split(//).size+1)+1)
     Service.primary.post(:message => msg,
                          :replyto => opt.messages[0])
   end
